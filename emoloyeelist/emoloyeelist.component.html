@@ -1,0 +1,34 @@
+<div class="container">
+
+
+  <div class="row justify-content-center pt-5">
+    <ul class="list-group w-100">
+      <li class="list-group-item" *ngFor="let x of users">{{x.id}} {{x.name}} <button
+          class="btn btn-success float-end button" [routerLink]="['edit',x.id]"> Edit </button> <button
+          class="btn btn-info float-end button" [routerLink]="['view',x.id]"> View </button> <button
+          class="btn btn-danger float-end button" (click)="deleteruser(x.id)"> Delete </button> </li> <button
+        class="btn btn-large btn-primary m-3" [routerLink]="['add']"> Add User </button>
+
+    </ul>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-4"  *ngFor="let x of varapi ">
+      <div class="card">
+        <img style="align-self: center;" height="120" width="120" [src]="x.image" alt="Product Image">
+        <div class="card-body">
+          <h5 class="card-title">{{x.title}}</h5>
+          <p class="card-text">{{x.description}}</p>
+          <p class="card-text">price:${{x.price}} </p>
+          <button class="btn btn-primary" (click)="addToCart(x)">Add to Cart</button>
+          <!-- More Details button -->
+          <button class="btn btn-primary" (click)="showdetails(x)" [routerLink]="['details',x.id]">show</button>
+
+
+        </div>
+      </div>
+  
+    </div>
+  </div>
+</div>
